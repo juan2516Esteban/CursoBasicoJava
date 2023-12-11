@@ -205,4 +205,53 @@ public class Operadores {
         entrada.close();
 
     }
+
+    public void ejercicio6(){
+
+        /* Este ejercicio nos pide hacer un pograma que calcule un trinomio cuadrado
+        perfecto esto lo haremos con esta formula (a+b)^2 = a^2 + 2(a*b) + b^2
+        o (a-b)^2 = a^2 - 2(a*b) + b^2 */
+
+        System.out.println("Por favor ingresa el signo del trinomio cuadardo prefecto" +
+                " \"+\" o \"-\" :");
+
+        Scanner entrada = new Scanner(System.in);
+
+        /* pedimos el dato por pantalla, y  leemos el primer caracter de la parabra con el metodo
+        charAt() */
+        char signoTrinomio = entrada.next().charAt(0);
+        float valorA;
+        float valorB;
+        float resultado;
+
+        if (signoTrinomio == '+'){
+
+            System.out.println("Por favor ingresa el valor de A teniendo en cuenta esta formula (A + B)^2 :");
+            valorA = entrada.nextFloat();
+
+            System.out.println("\nPor favor ingresa el valor de B: ");
+            valorB = entrada.nextFloat();
+
+            resultado = (float) (Math.pow(valorA,2)+(2*valorA*valorB)+Math.pow(valorB,2));
+
+            System.out.println("\nEl resultado del trinomio cuadrado perfecto es: "+resultado);
+
+        } else if (signoTrinomio == '-') {
+
+            System.out.println("Por favor ingresa el valor de A teniedo en cuenta esta foemula (A - B)^2 : ");
+            valorA = entrada.nextFloat();
+
+            System.out.println("\nPor favor ingresa el valor de B: ");
+            valorB = entrada.nextFloat();
+
+            resultado = (float) (Math.pow(valorA,2)-(2*valorA*valorB)+Math.pow(valorB,2));
+
+            System.out.println("\nEl resultado del trinomio cuadrado perfecto es: "+resultado);
+
+        }else{
+            System.out.println("Error por favor ingresa alguno de lo signos mencionados:" +
+                    " \"+\" o \"-\" vuelve a intentarlo.");
+        }
+
+    }
 }
