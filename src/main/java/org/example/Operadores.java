@@ -40,7 +40,7 @@ public class Operadores {
         float salario, salarioDiario , salarioPorHora;
         int horasTrabajadas;
 
-        System.out.printf("Por favor ingresa tu salario mensual, recomendación ingresa el salario con , " +
+        System.out.print("Por favor ingresa tu salario mensual, recomendación ingresa el salario con , " +
                 "en los puntos decimales: ");
 
         Scanner entrada = new Scanner(System.in);
@@ -82,6 +82,7 @@ public class Operadores {
         System.out.println("La cantidad de dolares entre los tres es: "+
                 (cantDolaresGui + cantDolaresLui + cantDolaresJua));
 
+        entrada.close();
     }
 
     public void ejercio4(){
@@ -137,7 +138,7 @@ public class Operadores {
                     totalComicion += Float.parseFloat(matrizCarros[i][g]);
                 }
             }
-
+            entrada.close();
         }
 
         // Aca imprimimos la matriz para verificar los datos ingresados.
@@ -164,5 +165,44 @@ public class Operadores {
                 + Math.round(totalSalario)); // redondiamos el salario.
     }
 
+    public void ejercicio5(){
 
+        /* Este ejercio nos pide lo siguiente, un programa que calcule la calificación de un estudiante
+         con las siguientes notas:  participación con un 10% , primer examen parcial con un 25% ,
+         segundo examen parcial con un 25% y por ultimo examen final con un 40%. */
+
+        System.out.println("Por favor ingresa el nombre del estudiante: ");
+        Scanner entrada = new Scanner(System.in);
+
+        String nombre = entrada.nextLine();
+
+        float notaParcicipación;
+        float notaPrimerExamenP;
+        float notaSegundoExamenP;
+        float notaExamenFinal;
+
+        // pedimos y almacenamos las diferentes notas.
+
+        System.out.println("Por favor ingreasa la nota de "+nombre+" de praticipación en clase: ");
+        notaParcicipación = entrada.nextFloat();
+
+        System.out.println("Por favor ingresa la nota de "+nombre+" del primer examen parcial: ");
+        notaPrimerExamenP = entrada.nextFloat();
+
+        System.out.println("Por favor ingresa la nota de "+nombre+" del segundo examen parcial: ");
+        notaSegundoExamenP = entrada.nextFloat();
+
+        System.out.println("Por favor ingresa la nota de "+nombre+" del examen final: ");
+        notaExamenFinal = entrada.nextFloat();
+
+        // Relizamos los calculos de ponderados y suma para sacar la nota final.
+        float calificacionFinal = ((notaParcicipación*10/100)+(notaPrimerExamenP*25/100)+
+                (notaSegundoExamenP*25/100)+(notaExamenFinal*40/100));
+
+        // imprimimos en panatalla el resultado.
+        System.out.println("La Calificación final de "+nombre+" es: "+calificacionFinal);
+
+        entrada.close();
+
+    }
 }
